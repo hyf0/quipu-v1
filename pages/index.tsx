@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const getServerSideProps = defineGetServerSideProps(async (ctx) => {
   const blog = new NotionBlogService()
 
-  const postOverviews = await blog.getPostOverviews()
+  const postOverviews = await blog.getPostOverviews(0, 10)
   return {
     props: {
       a: 1,

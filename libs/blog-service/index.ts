@@ -38,8 +38,8 @@ export class NotionBlogService implements BlogService {
       filter: {
         and: [{ property: 'type', select: { equals: 'Post' } }],
       },
+      page_size: countPerPage,
     })
-    console.log('data', JSON.stringify(databaseResult, null, 4))
     return {
       hasMore: databaseResult.has_more,
       overviews: databaseResult.results
