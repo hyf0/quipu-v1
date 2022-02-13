@@ -2,7 +2,6 @@
 
 Thoughts are fleeting. Tie a knot, will you?
 
-
 # features
 
 ## For users
@@ -13,8 +12,6 @@ Thoughts are fleeting. Tie a knot, will you?
 
 - Typescript
 - pnpm
-
-
 
 ---
 
