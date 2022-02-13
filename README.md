@@ -18,7 +18,7 @@ Thoughts are fleeting. Tie a knot, will you?
 
 ---
 
-Knots are inspired by the project [nobelium](https://github.com/craigary/nobelium) of [craigary](https://github.com/craigary).
+Knots is inspired by the project [nobelium](https://github.com/craigary/nobelium) of [craigary](https://github.com/craigary).
 
 # Development
 
