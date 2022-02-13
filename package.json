@@ -1,0 +1,34 @@
+{
+  "name": "knots",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,cjs,mjs,json}": "dprint fmt"
+  },
+  "dependencies": {
+    "@notionhq/client": "^0.4.13",
+    "next": "12.0.10",
+    "notion-to-md": "^2.3.0",
+    "react": "18.0.0-rc.0",
+    "react-dom": "18.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.17",
+    "@types/react": "17.0.39",
+    "autoprefixer": "^10.4.2",
+    "dprint": "^0.22.1",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.0.10",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22",
+    "typescript": "4.5.5"
+  }
+}
