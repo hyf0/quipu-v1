@@ -2,7 +2,7 @@
 
 Thoughts are fleeting. Tie a knot, will you?
 
-# features
+# Features
 
 ## For users
 
