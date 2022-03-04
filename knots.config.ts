@@ -1,6 +1,6 @@
-import { KnotsConfig } from './types'
+import { QuipuConfig } from './types'
 
-const config: KnotsConfig = {
+const config: QuipuConfig = {
   notionPageId: process.env.NOTION_PAGE_ID!,
   notionToken: process.env.NOTION_TOKEN!,
 }

@@ -1,4 +1,4 @@
-export interface KnotsConfig {
+export interface QuipuConfig {
   notionPageId: string
   notionToken: string
 }
