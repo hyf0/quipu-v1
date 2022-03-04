@@ -1,4 +1,4 @@
-import { NotionBlogService } from '@/libs/blog-service'
+import { NotionBlogService } from '@/libs/notion'
 import { defineGetServerSideProps, ExtractServerSideProps } from '@/libs/typing-next'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
