@@ -1,12 +1,12 @@
 import config from '@/knots.config'
-import { Client } from '@notionhq/client/build/src'
-import { NotionToMarkdown } from 'notion-to-md'
+import { EnhancedNotionClient } from '@notion-renderer/client'
+import { Client } from '@notionhq/client'
 
-const notion = new Client({
+const raw = new Client({
   auth: config.notionToken,
 })
 
-const n2m = new NotionToMarkdown({ notionClient: notion })
+export const notion = new EnhancedNotionClient(raw)
 
 export interface PostOverview {
   id: string
@@ -28,16 +28,17 @@ export interface BlogService {
   ): Promise<GetPostOverviewsResult>
 }
 
-export class NotionBlogService implements BlogService {
+export class NotionBlogService {
   async getPostOverviews(
     page?: number,
     countPerPage?: number,
   ): Promise<GetPostOverviewsResult> {
-    const databaseResult = await notion.databases.query({
+    const databaseResult = await notion.raw.databases.query({
       database_id: config.notionPageId,
       filter: {
         and: [{ property: 'type', select: { equals: 'Post' } }],
       },
+      sorts: [{ property: 'date', direction: 'descending' }],
       page_size: countPerPage,
     })
     return {
@@ -72,9 +73,5 @@ export class NotionBlogService implements BlogService {
         .filter((item): item is NonNullable<typeof item> => item != null),
       nextCursor: databaseResult.next_cursor,
     }
-  }
-
-  async getPageMarkdown(pid: string) {
-    return n2m.pageToMarkdown(pid)
   }
 }
