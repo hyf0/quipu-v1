@@ -13,9 +13,7 @@ specifiers:
   eslint-config-next: 12.0.10
   husky: ^7.0.4
   lint-staged: ^12.3.4
-  marked: ^4.0.12
   next: 12.0.10
-  notion-to-md: ^2.3.1
   postcss: ^8.4.7
   react: 18.0.0-rc.0
   react-dom: 18.0.0-rc.0
@@ -26,9 +24,7 @@ dependencies:
   '@notion-renderer/client': 0.0.2_@notionhq+client@1.0.1
   '@notion-renderer/react': 0.0.2_2c183c11962a2bcd85bcce956280dd03
   '@notionhq/client': 1.0.1
-  marked: 4.0.12
   next: 12.0.10_757a802188413a36d4f24237d13b8e90
-  notion-to-md: 2.3.1
   react: 18.0.0-rc.0
   react-dom: 18.0.0-rc.0_react@18.0.0-rc.0
 
@@ -1806,12 +1802,6 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /marked/4.0.12:
-    resolution: {integrity: sha512-hgibXWrEDNBWgGiK18j/4lkS6ihTe9sxtV4Q1OQppb/0zzyPSzoFANBa5MfsG/zgsWklmNnhm0XACZOH/0HBiQ==}
-    engines: {node: '>= 12'}
-    hasBin: true
-    dev: false
-
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
     dev: true
@@ -1944,11 +1934,6 @@ packages:
     resolution: {integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /notion-to-md/2.3.1:
-    resolution: {integrity: sha512-IH6Oe/u/gexEL5/XKvcWQHWyRWljtPi7+lki3CGx7OqzK2R5FsxxNORCofME03C9UyV++Y3Kj/yBh98WlyTwfg==}
-    engines: {node: '>=12'}
-    dev: false
 
   /npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
