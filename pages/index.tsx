@@ -12,6 +12,7 @@ export const getStaticProps = defineGetStaticProps(async (ctx) => {
     props: {
       postOverviewData,
     },
+    revalidate: 1,
   }
 })
 
