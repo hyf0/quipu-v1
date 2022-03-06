@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { FC, useEffect } from 'react'
 import { marked } from 'marked'
-import config from '@/knots.config'
+import config from '@/quipu.config'
 import { Client } from '@notionhq/client'
 
 export const getServerSideProps = defineGetServerSideProps(async (ctx) => {

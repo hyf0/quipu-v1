@@ -1,4 +1,4 @@
-import config from '@/knots.config'
+import config from '@/quipu.config'
 import { EnhancedNotionClient } from '@notion-renderer/client'
 import { Client } from '@notionhq/client'
 
