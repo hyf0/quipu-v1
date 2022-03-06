@@ -1,12 +1,15 @@
 import config from '@/quipu.config'
 import { EnhancedNotionClient } from '@notion-renderer/client'
 import { Client } from '@notionhq/client'
+import createFetch from '@vercel/fetch'
+import * as fetchImpl from 'node-fetch'
 
-const raw = new Client({
+const rawClient = new Client({
   auth: config.notionToken,
+  fetch: createFetch(fetchImpl) as any,
 })
 
-export const notion = new EnhancedNotionClient(raw)
+export const notionClient = new EnhancedNotionClient(rawClient)
 
 export interface PostOverview {
   id: string
@@ -21,19 +24,12 @@ export interface GetPostOverviewsResult {
   nextCursor: string | null
 }
 
-export interface BlogService {
-  getPostOverviews(
-    page?: number,
-    countPerPage?: number,
-  ): Promise<GetPostOverviewsResult>
-}
-
-export class NotionBlogService {
+export class BlogService {
   async getPostOverviews(
     page?: number,
     countPerPage?: number,
   ): Promise<GetPostOverviewsResult> {
-    const databaseResult = await notion.raw.databases.query({
+    const databaseResult = await notionClient.raw.databases.query({
       database_id: config.notionPageId,
       filter: {
         and: [{ property: 'type', select: { equals: 'Post' } }],
@@ -75,3 +71,5 @@ export class NotionBlogService {
     }
   }
 }
+
+export const blogService = new BlogService()
