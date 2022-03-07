@@ -1,10 +1,9 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@notion-renderer/client': ^0.0.3
-  '@notion-renderer/react': ^0.0.3
+  '@notion-renderer/client': ^0.0.4
+  '@notion-renderer/react': ^0.0.4
   '@notionhq/client': 1.0.1
-  '@types/marked': ^4.0.2
   '@types/node': 17.0.17
   '@types/react': 17.0.39
   '@vercel/fetch': ^6.2.0
@@ -15,7 +14,7 @@ specifiers:
   husky: ^7.0.4
   lint-staged: ^12.3.4
   next: 12.0.10
-  node-fetch: 2.6.1
+  node-fetch: 2.6.7
   postcss: ^8.4.7
   react: 18.0.0-rc.0
   react-dom: 18.0.0-rc.0
@@ -23,17 +22,16 @@ specifiers:
   typescript: 4.5.5
 
 dependencies:
-  '@notion-renderer/client': 0.0.3_@notionhq+client@1.0.1
-  '@notion-renderer/react': 0.0.3_2c183c11962a2bcd85bcce956280dd03
+  '@notion-renderer/client': 0.0.4_@notionhq+client@1.0.1
+  '@notion-renderer/react': 0.0.4_2c183c11962a2bcd85bcce956280dd03
   '@notionhq/client': 1.0.1
-  '@vercel/fetch': 6.2.0_node-fetch@2.6.1
+  '@vercel/fetch': 6.2.0_node-fetch@2.6.7
   next: 12.0.10_757a802188413a36d4f24237d13b8e90
-  node-fetch: 2.6.1
+  node-fetch: 2.6.7
   react: 18.0.0-rc.0
   react-dom: 18.0.0-rc.0_react@18.0.0-rc.0
 
 devDependencies:
-  '@types/marked': 4.0.2
   '@types/node': 17.0.17
   '@types/react': 17.0.39
   autoprefixer: 10.4.2_postcss@8.4.7
@@ -246,31 +244,31 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@notion-renderer/client/0.0.3_@notionhq+client@1.0.1:
-    resolution: {integrity: sha512-tozFzo/mjXqIkFb2fgTlQrPxlBXpqGqt55qFAZYymVot1WdZgHam2Th0PHVFCDpSzO88y8yBANZ4+rqe0flICA==}
+  /@notion-renderer/client/0.0.4_@notionhq+client@1.0.1:
+    resolution: {integrity: sha512-lJHGdcZgboPlG/IYws45OG21vZeWRHIbcz+SA3xRqKeGCA0D+AIO5Cu9jKxO1d138zLdbliG3Nrgy3oJFfv61A==}
     peerDependencies:
       '@notionhq/client': 1.0.1
     dependencies:
-      '@notion-renderer/shared': 0.0.3_@notionhq+client@1.0.1
+      '@notion-renderer/shared': 0.0.4_@notionhq+client@1.0.1
       '@notionhq/client': 1.0.1
       lodash-es: 4.17.21
       p-limit: 4.0.0
     dev: false
 
-  /@notion-renderer/react/0.0.3_2c183c11962a2bcd85bcce956280dd03:
-    resolution: {integrity: sha512-fWEujOGhyS0rsNKfcS/9ibhuepBXtI6ZIHWidIDKtCZfG2aZXaOFt/gsJsiTUInFJlIQ5i1mtmF4x0wbxeeS0A==}
+  /@notion-renderer/react/0.0.4_2c183c11962a2bcd85bcce956280dd03:
+    resolution: {integrity: sha512-ltn4fKBnF5LKEJ/aMGsqQ993ABYzUQjsMHhuwAQhEUFwItKYmGhMVxiDk51dSFG/xzjh3HyIX36z+c08b09uYQ==}
     peerDependencies:
       react: ^17.0.2 || ^18.0.0-0
     dependencies:
-      '@notion-renderer/shared': 0.0.3_@notionhq+client@1.0.1
+      '@notion-renderer/shared': 0.0.4_@notionhq+client@1.0.1
       prismjs: 1.27.0
       react: 18.0.0-rc.0
     transitivePeerDependencies:
       - '@notionhq/client'
     dev: false
 
-  /@notion-renderer/shared/0.0.3_@notionhq+client@1.0.1:
-    resolution: {integrity: sha512-celnlPeGGsmI8oDrdPGYkpAmbu+KlhMY+lHaiXsBFNS+UXkv9Gk3ZTcF3/StjTMLy8KGG16vtfGP9ALE/NUn/g==}
+  /@notion-renderer/shared/0.0.4_@notionhq+client@1.0.1:
+    resolution: {integrity: sha512-I6pR7uKmIKrOX/kRXBXgnVCDkST4vm+hIorJl774H9jKXpBC9CMI5sX8xatq66Pc1KbXOK0XbrK91B5pkRhJCA==}
     peerDependencies:
       '@notionhq/client': 1.0.1
     dependencies:
@@ -308,10 +306,6 @@ packages:
   /@types/lru-cache/4.1.1:
     resolution: {integrity: sha512-8mNEUG6diOrI6pMqOHrHPDBB1JsrpedeMK9AWGzVCQ7StRRribiT9BRvUmF8aUws9iBbVlgVekOT5Sgzc1MTKw==}
     dev: false
-
-  /@types/marked/4.0.2:
-    resolution: {integrity: sha512-auNrZ/c0w6wsM9DccwVxWHssrMDezHUAXNesdp2RQrCVCyrQbOiSq7yqdJKrUQQpw9VTm7CGYJH2A/YG7jjrjQ==}
-    dev: true
 
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
@@ -413,40 +407,40 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vercel/fetch-cached-dns/2.1.0_node-fetch@2.6.1:
+  /@vercel/fetch-cached-dns/2.1.0_node-fetch@2.6.7:
     resolution: {integrity: sha512-dIQWF+bG2EOYeCCCeT3E77qZZa7VgW2quEKw4k8/keeoD8lRMjiNi//Ww7LJ8wXecfv7XXtprwN5uLLLGo/ktg==}
     peerDependencies:
       node-fetch: ^2.6.1
     dependencies:
       '@types/node-fetch': 2.6.1
       '@zeit/dns-cached-resolve': 2.1.2
-      node-fetch: 2.6.1
+      node-fetch: 2.6.7
     dev: false
 
-  /@vercel/fetch-retry/5.1.3_node-fetch@2.6.1:
+  /@vercel/fetch-retry/5.1.3_node-fetch@2.6.7:
     resolution: {integrity: sha512-UIbFc4VsEZHOr6dWuE+kxY4NxnOLXFMCWm0fSKRRHUEtrIzaJLzHpWk2QskCXTSzFgFvhkLAvSrBK2XZg7NSzg==}
     peerDependencies:
       node-fetch: ^2.6.7
     dependencies:
       async-retry: 1.3.3
       debug: 4.3.3
-      node-fetch: 2.6.1
+      node-fetch: 2.6.7
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@vercel/fetch/6.2.0_node-fetch@2.6.1:
+  /@vercel/fetch/6.2.0_node-fetch@2.6.7:
     resolution: {integrity: sha512-MU+Mzh06NIAXxwdnyHmBFg+/lTKBbzDkCSNhAwWTFJ4rHuBc4pHc8E6XP+qnwqaWugjOBQgFfQCGDLnV820c9A==}
     peerDependencies:
       '@types/node-fetch': ^2.6.1
       node-fetch: ^2.6.7
     dependencies:
       '@types/async-retry': 1.4.3
-      '@vercel/fetch-cached-dns': 2.1.0_node-fetch@2.6.1
-      '@vercel/fetch-retry': 5.1.3_node-fetch@2.6.1
+      '@vercel/fetch-cached-dns': 2.1.0_node-fetch@2.6.7
+      '@vercel/fetch-retry': 5.1.3_node-fetch@2.6.7
       agentkeepalive: 4.2.1
       debug: 4.3.3
-      node-fetch: 2.6.1
+      node-fetch: 2.6.7
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1938,11 +1932,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
-    dev: false
-
-  /node-fetch/2.6.1:
-    resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
-    engines: {node: 4.x || >=6.0.0}
     dev: false
 
   /node-fetch/2.6.7:
