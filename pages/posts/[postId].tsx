@@ -22,16 +22,11 @@ export const getServerSideProps = defineGetServerSideProps(async (ctx) => {
 type ServerSideProps = ExtractServerSideProps<typeof getServerSideProps>
 
 const BlogPost: NextPage<ServerSideProps> = ({ page }) => {
-  const { query: { postId } } = useRouter()
-
   return (
     <Page meta={{ title: page.title ?? undefined }}>
       <Header />
-      <div className="bg-white rounded  md:my-[12px] md:w-[900px] mx-auto">
-        <div className='text-3xl'>{page.title}</div>
-        <div className="hover:opacity-50 text-xl opacity-70">
-          <Link href="/">.. /</Link>
-        </div>
+      <div className="rounded px-[8px] pb-[16px] mx-auto md:w-[900px] ">
+        <div className="text-3xl mb-[16px]">{page.title}</div>
         <div>
           <NotionBlocksRenderer blocks={page.rootBlocks} childrenByBlockId={page.childrenByBlockId} />
         </div>

@@ -23,10 +23,10 @@ const Home: NextPage<ServerSideProps> = ({ postOverviewData }) => {
     <Page meta={{ title: config.title }}>
       <div>
         <Header />
-        <div className="bg-white rounded  md:my-[12px] md:w-[900px] mx-auto">
+        <div className="bg-white rounded md:w-[900px] mx-auto pb-[16px]">
           {postOverviewData.overviews.map((overview) => (
             <div
-              className="p-2 hover:bg-slate-100 last:border-0"
+              className="p-2 hover:bg-slate-100"
               key={overview.id}
             >
               <div className="flex">
