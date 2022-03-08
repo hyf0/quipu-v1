@@ -6,12 +6,18 @@ Thoughts are fleeting. Tie a knot, will you?
 
 ## For users
 
-- Official Notion API
+- Privacy and security guarantee by Official Notion API
+- Compatible with [nobelium](https://github.com/craigary/nobelium)
 
 ## For developers
 
 - Typescript
-- pnpm
+- Pnpm
+- TailwindCSS
+
+# Related projects
+
+- [notion-renderer](https://github.com/iheyunfei/notion-renderer)
 
 ---
 
