@@ -32,7 +32,10 @@ export class BlogService {
     const databaseResult = await notionClient.raw.databases.query({
       database_id: config.notionPageId,
       filter: {
-        and: [{ property: 'type', select: { equals: 'Post' } }],
+        and: [
+          { property: 'type', select: { equals: 'Post' } },
+          { property: 'status', select: { equals: 'Published' } },
+        ],
       },
       sorts: [{ property: 'date', direction: 'descending' }],
       page_size: countPerPage,
@@ -57,6 +60,7 @@ export class BlogService {
             if (summaryProp?.type === 'rich_text') {
               summary = summaryProp.rich_text[0]?.plain_text ?? ''
             }
+
             return <PostOverview> {
               id: item.id,
               title,
