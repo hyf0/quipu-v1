@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@notion-renderer/client': ^0.0.4
-  '@notion-renderer/react': ^0.0.4
+  '@notion-renderer/client': 0.0.9
+  '@notion-renderer/react': 0.0.9
   '@notionhq/client': 1.0.1
   '@types/node': 17.0.17
   '@types/react': 17.0.39
@@ -22,8 +22,8 @@ specifiers:
   typescript: 4.5.5
 
 dependencies:
-  '@notion-renderer/client': 0.0.4_@notionhq+client@1.0.1
-  '@notion-renderer/react': 0.0.4_2c183c11962a2bcd85bcce956280dd03
+  '@notion-renderer/client': 0.0.9_@notionhq+client@1.0.1
+  '@notion-renderer/react': 0.0.9_2c183c11962a2bcd85bcce956280dd03
   '@notionhq/client': 1.0.1
   '@vercel/fetch': 6.2.0_node-fetch@2.6.7
   next: 12.0.10_757a802188413a36d4f24237d13b8e90
@@ -244,31 +244,32 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@notion-renderer/client/0.0.4_@notionhq+client@1.0.1:
-    resolution: {integrity: sha512-lJHGdcZgboPlG/IYws45OG21vZeWRHIbcz+SA3xRqKeGCA0D+AIO5Cu9jKxO1d138zLdbliG3Nrgy3oJFfv61A==}
+  /@notion-renderer/client/0.0.9_@notionhq+client@1.0.1:
+    resolution: {integrity: sha512-RoQkM6jiY6itn0lw/HvX2eUQE6LQ1TC1ka8UCSCiVS0E5Lw8ZQy+1WD9EfngaAO8SvzgsBtx0uEcO9NXRRoiXQ==}
     peerDependencies:
       '@notionhq/client': 1.0.1
     dependencies:
-      '@notion-renderer/shared': 0.0.4_@notionhq+client@1.0.1
+      '@notion-renderer/shared': 0.0.9_@notionhq+client@1.0.1
       '@notionhq/client': 1.0.1
       lodash-es: 4.17.21
       p-limit: 4.0.0
     dev: false
 
-  /@notion-renderer/react/0.0.4_2c183c11962a2bcd85bcce956280dd03:
-    resolution: {integrity: sha512-ltn4fKBnF5LKEJ/aMGsqQ993ABYzUQjsMHhuwAQhEUFwItKYmGhMVxiDk51dSFG/xzjh3HyIX36z+c08b09uYQ==}
+  /@notion-renderer/react/0.0.9_2c183c11962a2bcd85bcce956280dd03:
+    resolution: {integrity: sha512-5aIqQ+Ntq9qrisMy2Uq6/6c6OyuXH/nwivwL1udUNi5FyZFgGskCQKgaKpysePI+bTInaRiDB94shs7RxR0H4A==}
     peerDependencies:
       react: ^17.0.2 || ^18.0.0-0
     dependencies:
-      '@notion-renderer/shared': 0.0.4_@notionhq+client@1.0.1
+      '@notion-renderer/shared': 0.0.9_@notionhq+client@1.0.1
+      clsx: 1.1.1
       prismjs: 1.27.0
       react: 18.0.0-rc.0
     transitivePeerDependencies:
       - '@notionhq/client'
     dev: false
 
-  /@notion-renderer/shared/0.0.4_@notionhq+client@1.0.1:
-    resolution: {integrity: sha512-I6pR7uKmIKrOX/kRXBXgnVCDkST4vm+hIorJl774H9jKXpBC9CMI5sX8xatq66Pc1KbXOK0XbrK91B5pkRhJCA==}
+  /@notion-renderer/shared/0.0.9_@notionhq+client@1.0.1:
+    resolution: {integrity: sha512-NDmvAE2D4SsOHVGjdaIgkrgb4nkxNT0YNqsfj+kxC5TvLJt82WH/qQDfmyzdP5lyX9F7JT/YXRNgaPDew2++Rg==}
     peerDependencies:
       '@notionhq/client': 1.0.1
     dependencies:
@@ -774,6 +775,11 @@ packages:
       slice-ansi: 5.0.0
       string-width: 5.1.2
     dev: true
+
+  /clsx/1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
