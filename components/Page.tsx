@@ -1,11 +1,13 @@
 import Head from 'next/head'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-export const Page: FC<{
-  meta: {
-    title?: string
-  }
-}> = ({ meta, children }) => {
+export const Page: FC<
+  PropsWithChildren<{
+    meta: {
+      title?: string
+    }
+  }>
+> = ({ meta, children }) => {
   return (
     <>
       <Head>

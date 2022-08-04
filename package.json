@@ -12,26 +12,26 @@
     "*.{ts,tsx,js,jsx,cjs,mjs,json}": "dprint fmt"
   },
   "dependencies": {
-    "@notion-renderer/client": "0.0.10",
-    "@notion-renderer/react": "0.0.10",
-    "@notionhq/client": "1.0.1",
-    "@vercel/fetch": "^6.2.0",
-    "next": "12.0.10",
-    "node-fetch": "2.6.7",
-    "react": "18.0.0-rc.0",
-    "react-dom": "18.0.0-rc.0"
+    "@mdx-js/mdx": "^2.1.2",
+    "@notionhq/client": "2.1.1",
+    "next": "^12.2.3",
+    "notion-to-md": "^2.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.17",
-    "@types/react": "17.0.39",
-    "autoprefixer": "^10.4.2",
-    "dprint": "^0.22.2",
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.4",
-    "postcss": "^8.4.7",
-    "tailwindcss": "^3.0.23",
-    "typescript": "4.5.5"
+    "@types/node": "18.6.3",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
+    "dprint": "^0.30.3",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7",
+    "typescript": "4.7.4",
+    "webpack-virtual-modules": "^0.4.4"
   }
 }

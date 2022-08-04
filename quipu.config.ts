@@ -2,7 +2,7 @@ import { QuipuConfig } from './types'
 
 const config: QuipuConfig = {
   title: 'Quipu',
-  notionPageId: process.env.NOTION_PAGE_ID!,
+  notionDatabaseId: process.env.NOTION_DB_ID!,
   notionToken: process.env.NOTION_TOKEN!,
 }
 

@@ -1,5 +1,5 @@
 export interface QuipuConfig {
   title: string
-  notionPageId: string
+  notionDatabaseId: string
   notionToken: string
 }

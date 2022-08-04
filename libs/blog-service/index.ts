@@ -1,21 +1,23 @@
 import config from '@/quipu.config'
-import { EnhancedNotionClient } from '@notion-renderer/client'
+import { hasProp, nonNullable } from '@/utils'
 import { Client } from '@notionhq/client'
-import createFetch from '@vercel/fetch'
-import * as fetchImpl from 'node-fetch'
+import { NotionToMarkdown } from 'notion-to-md'
 
-const rawClient = new Client({
+const notion = new Client({
   auth: config.notionToken,
-  fetch: createFetch(fetchImpl) as any,
 })
 
-export const notionClient = new EnhancedNotionClient(rawClient)
+export const notion2Markdown = new NotionToMarkdown({ notionClient: notion })
+
+const notionClient = {
+  raw: notion,
+}
 
 export interface PostOverview {
   id: string
   title: string
   date: string
-  summary?: string
+  summary: string | null
 }
 
 export interface GetPostOverviewsResult {
@@ -25,12 +27,31 @@ export interface GetPostOverviewsResult {
 }
 
 export class BlogService {
+  private async fetchProp(pageId: string, propId: string) {
+    const response = await notion.pages.properties.retrieve({
+      page_id: pageId,
+      property_id: propId,
+    })
+
+    // See https://developers.notion.com/reference/retrieve-a-page-property
+    if ('object' in response && response.object === 'list') {
+      // Property types that return a paginated list of property item objects are:
+      // - title
+      // - rich_text
+      // - relation
+      // - people
+      return response.results[0]
+    } else {
+      return response
+    }
+  }
+
   async getPostOverviews(
     page?: number,
     countPerPage?: number,
   ): Promise<GetPostOverviewsResult> {
-    const databaseResult = await notionClient.raw.databases.query({
-      database_id: config.notionPageId,
+    const resp = await notionClient.raw.databases.query({
+      database_id: config.notionDatabaseId,
       filter: {
         and: [
           { property: 'type', select: { equals: 'Post' } },
@@ -40,38 +61,31 @@ export class BlogService {
       sorts: [{ property: 'date', direction: 'descending' }],
       page_size: countPerPage,
     })
-    return {
-      hasMore: databaseResult.has_more,
-      overviews: databaseResult.results
-        .map((item) => {
-          if ('properties' in item) {
-            const titleProp = item.properties.title
-            const dateProp = item.properties.date
-            const summaryProp = item.properties.summary
-            let title = ''
-            let date = ''
-            let summary = undefined
-            if (titleProp?.type === 'title') {
-              title = titleProp.title[0]?.plain_text ?? ''
-            }
-            if (dateProp?.type === 'date') {
-              date = dateProp.date?.start ?? ''
-            }
-            if (summaryProp?.type === 'rich_text') {
-              summary = summaryProp.rich_text[0]?.plain_text ?? ''
-            }
 
-            return <PostOverview> {
-              id: item.id,
-              title,
-              date,
-              summary,
-            }
+    const postsOverviews = await Promise.all(
+      resp.results
+        .filter(hasProp('properties'))
+        .filter(nonNullable)
+        .map(async (page) => {
+          const [titleProp, DateProp] = await Promise.all([
+            this.fetchProp(page.id, page.properties.title!.id),
+            this.fetchProp(page.id, page.properties.date!.id),
+          ])
+          return <PostOverview> {
+            id: page.id,
+            title: (titleProp as Extract<typeof titleProp, { type: 'title' }>)
+              .title.plain_text,
+            date: (DateProp as Extract<typeof titleProp, { type: 'date' }>).date
+              ?.start ?? '',
+            summary: null,
           }
-          return null
-        })
-        .filter((item): item is NonNullable<typeof item> => item != null),
-      nextCursor: databaseResult.next_cursor,
+        }),
+    )
+
+    return {
+      hasMore: resp.has_more,
+      overviews: postsOverviews,
+      nextCursor: resp.next_cursor,
     }
   }
 }
