@@ -5,8 +5,6 @@ import { defineGetStaticProps, ExtractStaticProps } from '@/libs/typing-next'
 import config from '@/quipu.config'
 import type { NextPage } from 'next'
 import Link from 'next/link'
-// @ts-ignore
-import * as all from './module-bar'
 
 export const getStaticProps = defineGetStaticProps(async (ctx) => {
   const postOverviewData = await blogService.getPostOverviews(0, 100)
@@ -22,7 +20,6 @@ type ServerSideProps = ExtractStaticProps<typeof getStaticProps>
 
 const Home: NextPage<ServerSideProps> = ({ postOverviewData }) => {
   console.log('postOverviewData', postOverviewData)
-  console.log('all', all)
   return (
     <Page meta={{ title: config.title }}>
       <div>

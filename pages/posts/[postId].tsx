@@ -6,10 +6,13 @@ import {
 } from '@/libs/typing-next'
 import { notion2Markdown } from '@/libs/blog-service'
 import { NextPage } from 'next'
-import { compile, compileSync, evaluateSync, runSync } from '@mdx-js/mdx'
+// import { compile, compileSync, evaluateSync, runSync } from '@mdx-js/mdx'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+// @ts-ignore
+import MDX from '@mdx-js/runtime'
+
 
 export const getServerSideProps = defineGetServerSideProps(async (ctx) => {
   const postId = ctx.params?.postId ?? ''
@@ -24,14 +27,28 @@ export const getServerSideProps = defineGetServerSideProps(async (ctx) => {
 
 type ServerSideProps = ExtractServerSideProps<typeof getServerSideProps>
 
+const components = {
+  // @ts-ignore
+  h1: props => <h1 style={{color: 'tomato'}} {...props} />,
+  // @ts-ignore
+  Demo: props => <h1>This is a demo component</h1>
+}
+
+const scope = {
+  some: 'value'
+}
+
 const BlogPost: NextPage<ServerSideProps> = ({ content }) => {
-  const m = runSync(compileSync(content), {})
-  console.log('MDXModule', m)
+  // const m = runSync(compileSync(content), {})
+  // console.log('MDXModule', m)
   return (
     <Page meta={{ title: undefined }}>
       <Header />
       <div className="rounded px-[8px] pb-[16px] mx-auto md:w-[900px] ">
         {/* <div className="text-3xl mb-[16px]">{page.title}</div> */}
+        <MDX components={components} scope={scope}>
+    {content}
+  </MDX>
         <div>{content}</div>
       </div>
     </Page>
